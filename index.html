@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOZ | الرئيسية</title>
+    <style>
+        :root { 
+            --v-red: #ff4655; 
+            --v-black: #0f1923; 
+            --v-white: #ece8e1; 
+        }
+
+        @font-face { 
+            font-family: 'Valorant'; 
+            src: url('https://db.onlinewebfonts.com/t/20f666f225724598d9703f83733a1e9a.woff2') format('woff2'); 
+        }
+
+        body { 
+            background-color: var(--v-black); 
+            color: var(--v-white); 
+            font-family: 'Segoe UI', sans-serif; 
+            margin: 0; 
+            height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            overflow: hidden; 
+        }
+
+        nav { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 30px 60px; 
+            position: absolute; 
+            top: 0; 
+            width: calc(100% - 120px); 
+            z-index: 10; 
+        }
+
+        .auth { display: flex; gap: 25px; align-items: center; }
+        
+        .register { 
+            border: 1px solid var(--v-red); 
+            padding: 7px 20px; 
+            text-decoration: none; 
+            color: var(--v-red); 
+            font-size: 0.85rem; 
+            font-weight: bold; 
+            box-shadow: 0 0 10px rgba(255, 70, 85, 0.3); 
+            transition: 0.3s;
+        }
+        .register:hover { 
+            background-color: var(--v-red); 
+            color: white; 
+            box-shadow: 0 0 20px rgba(255, 70, 85, 0.6);
+        }
+
+        .login { 
+            color: #7b7b7b; 
+            text-decoration: none; 
+            font-size: 0.85rem; 
+            font-weight: bold; 
+            transition: 0.3s;
+        }
+        .login:hover { color: white; }
+
+        .brand-logo {
+            font-family: 'Valorant';
+            display: flex;
+            direction: ltr;
+            align-items: baseline;
+            gap: 2px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .n-z { color: var(--v-red); text-shadow: 0 0 10px var(--v-red); }
+
+        .hero {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #16212b 0%, #0f1923 100%);
+        }
+
+        .main-title {
+            font-family: 'Valorant', sans-serif;
+            display: flex;
+            direction: ltr;
+            align-items: baseline; 
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .char-s { font-size: 10rem; color: white; }
+        .char-t { font-size: 8rem; color: #ccc; }
+        .char-o { font-size: 6rem; color: #999; }
+        .char-z { 
+            font-size: 4rem; 
+            color: var(--v-red); 
+            text-shadow: 0 0 30px rgba(255, 70, 85, 0.8);
+        }
+
+        .hero p { color: #888; font-size: 1rem; max-width: 500px; margin: 0 0 40px; line-height: 1.6; }
+
+        .start-btn {
+            background-color: var(--v-red);
+            color: white;
+            padding: 18px 60px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: 0.3s;
+        }
+        .start-btn:hover {
+            background-color: white;
+            color: var(--v-red);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="auth">
+            <a href="register.html" class="register">REGISTER</a>
+            <a href="login.html" class="login">LOGIN</a>
+        </div>
+        
+        <a href="index.html" class="brand-logo">
+            <span>S</span><span>T</span><span>O</span><span class="n-z">Z</span>
+        </a>
+    </nav>
+
+    <div class="hero">
+        <h1 class="main-title">
+            <span class="char-s">S</span>
+            <span class="char-t">T</span>
+            <span class="char-o">O</span>
+            <span class="char-z">Z</span>
+        </h1>
+        <p>بوابتك الآمنة والمصدر الأول في عالم القيمنق للحصول على أقوى حسابات وسكنات فالورانت النادرة.</p>
+        
+        <a href="store.html" class="start-btn">
+             إبدأ الاستخدام <span style="font-family: sans-serif;">❯</span>
+        </a>
+    </div>
+
+</body>
+</html>

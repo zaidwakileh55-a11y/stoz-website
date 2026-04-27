@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOZ | محرك البحث</title>
+    <style>
+        :root { --v-red: #ff4655; --v-black: #0f1923; --v-white: #ece8e1; --v-gray: #7b7b7b; }
+        @font-face { font-family: 'Valorant'; src: url('https://db.onlinewebfonts.com/t/20f666f225724598d9703f83733a1e9a.woff2') format('woff2'); }
+        body { background-color: var(--v-black); color: var(--v-white); font-family: 'Segoe UI', sans-serif; margin: 0; height: 100vh; display: flex; align-items: center; justify-content: center; background-image: linear-gradient(rgba(15, 25, 35, 0.8), rgba(15, 25, 35, 0.8)), url('https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt7839634e5684490c/5eb434199c836932454687d3/V_AGENTS_592x445_Jett.png'); background-size: cover; }
+        .search-container { text-align: center; width: 90%; max-width: 700px; }
+        .brand-name { font-family: 'Valorant'; font-size: 5rem; margin-bottom: 10px; }
+        .brand-name span { color: var(--v-red); text-shadow: 0 0 20px var(--v-red); }
+        .tagline { color: var(--v-gray); font-size: 1.2rem; margin-bottom: 40px; }
+        .search-box { display: flex; background: rgba(22, 33, 43, 0.9); border: 1px solid #2a3541; padding: 10px; border-radius: 4px; }
+        .search-box input { background: transparent; border: none; color: white; flex: 1; padding: 15px 20px; font-size: 1.1rem; outline: none; }
+        .search-box button { background: var(--v-red); border: none; color: white; padding: 0 30px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .search-box button:hover { background: white; color: var(--v-red); }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <h1 class="brand-name">STO<span>Z</span></h1>
+        <p class="tagline">ابحث عن أي حساب واستعرض فخامته</p>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="أدخل اسم الحساب هنا...">
+            <button onclick="location.href='profile.html'">بحث</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -51,9 +51,9 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
         import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-        // إعداداتك الخاصة
+        // تم تحديث الإعدادات بناءً على معلومات مشروعك الصحيحة
         const firebaseConfig = {
-            apiKey: "AIzaSyDOrD2X_FzM6fEO2X_FzM6fEO2XkrD4k6VWQ6GUQdqis",
+            apiKey: "AIzaSyDOrD2X_FzM6fE02XkrD4k6VWQ6GUQdqis",
             authDomain: "stoz-b0374.firebaseapp.com",
             projectId: "stoz-b0374",
             storageBucket: "stoz-b0374.firebasestorage.app",
@@ -71,8 +71,8 @@
                     alert("أهلاً بك " + result.user.displayName);
                     window.location.href = "index.html";
                 }).catch((error) => {
-                    console.error(error);
-                    alert("حدث خطأ: تأكد من تفعيل Google في Firebase");
+                    console.error("Firebase Error:", error);
+                    alert("حدث خطأ في تسجيل الدخول. تأكد من تفعيل Google Provider في Firebase Console.");
                 });
         });
     </script>

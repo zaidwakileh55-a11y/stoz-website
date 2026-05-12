@@ -47,11 +47,11 @@
         <div class="switch-text">ما عندك حساب؟ <a href="register.html">سجل الآن</a></div>
     </div>
 
+    <!-- استخدام نسخة ثابتة ومستقرة من Firebase -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
         import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-        // تم تحديث الإعدادات بناءً على معلومات مشروعك الصحيحة
         const firebaseConfig = {
             apiKey: "AIzaSyDOrD2X_FzM6fE02XkrD4k6VWQ6GUQdqis",
             authDomain: "stoz-b0374.firebaseapp.com",
@@ -65,15 +65,25 @@
         const auth = getAuth(app);
         const provider = new GoogleAuthProvider();
 
-        document.getElementById('googleLogin').addEventListener('click', () => {
-            signInWithPopup(auth, provider)
-                .then((result) => {
-                    alert("أهلاً بك " + result.user.displayName);
-                    window.location.href = "index.html";
-                }).catch((error) => {
-                    console.error("Firebase Error:", error);
-                    alert("حدث خطأ في تسجيل الدخول. تأكد من تفعيل Google Provider في Firebase Console.");
-                });
+        // تحسين دالة الدخول
+        document.getElementById('googleLogin').addEventListener('click', async () => {
+            try {
+                const result = await signInWithPopup(auth, provider);
+                console.log("Success:", result.user);
+                alert("أهلاً بك يا " + result.user.displayName);
+                window.location.href = "index.html";
+            } catch (error) {
+                console.error("Full Firebase Error:", error);
+                
+                // رسائل خطأ مفصلة للفهم
+                if (error.code === 'auth/operation-not-allowed') {
+                    alert("خطأ: يجب تفعيل Google في Firebase Console.");
+                } else if (error.code === 'auth/unauthorized-domain') {
+                    alert("خطأ: هذا الدومين غير مسموح له بالدخول. أضف zaidwakileh55-a11y.github.io في Authorized Domains.");
+                } else {
+                    alert("حدث خطأ: " + error.message);
+                }
+            }
         });
     </script>
 </body>
